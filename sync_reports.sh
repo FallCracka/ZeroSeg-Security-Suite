@@ -1,33 +1,33 @@
-#!/bin/bash
+#!/мусорное ведро/баш
 # Запрещаем зависание при запросе пароля
-export GIT_TERMINAL_PROMPT=0
+экспорт GIT_TERMINAL_PROMPT=0
 
 # Твои данные
-TOKEN="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"
-REPO="github.com/FallCracka/ZeroSeg-Security-Suite.git"
-URL="https://FallCracka:${TOKEN}@${REPO}"
+ТОКЕН=""
+РЕПО=""
+URL-адрес="https://FallCracka:${ТОКЕН}@${РЕПО}"
 
 # Настройка репозитория
-git remote set-url origin "$URL" 2>/dev/null || git remote add origin "$URL"
-git config user.name "FallCracka"
+git удаленный set-url origin "$URL" 2>/dev/null || git удаленное добавление источника "$URL"
+git config имя пользователя "FallCracka"
 git config user.email "fall@fall.fall"
 
-echo "[*] ZeroSeg: Синхронизация отчетов..."
+эхо "[*] ZeroSeg: Синхронизация отчета..."
 
 # Добавляем файлы (базу и все отчеты из папки)
-git add audit_results.db reports/*.txt 2>/dev/null
+git добавить отчеты audit_results.db/*.txt 2>/dev/null
 
 # Проверяем, есть ли новые изменения
-if git diff-index --quiet HEAD --; then
-    echo "[i] Новых изменений в файлах не обнаружено."
-else
-    git commit -m "Security Audit: $(hostname) - $(date +'%Y-%m-%d %H:%M:%S')"
-fi
+если git diff-индекс --тихо ГОЛОВА --; затем
+ эхо "[i] Новых изменений в файлах не обнаружено."
+еще
+ git коммит -м «Аудит безопасности: $(имя хоста) - $(дата +'%Y-%m-%d %H:%M:%S')"
+фи
 
-# Отправка в ветку main
-echo "[*] Выполняю push на GitHub..."
-if git push origin main; then
-    echo "[v] УСПЕХ: Все данные синхронизированы!"
-else
-    echo "[x] ОШИБКА: GitHub отклонил запрос. Проверь статус токена."
-fi
+# Отправка в виде основной
+эхо "[*] Выполнять push на GitHub..."
+если git push origin main; затем
+ эхо "[v] УСПЭХ: Все данные синхронизированы!"
+еще
+ эхо "[x] ОШИБКА: GitHub отклонил запрос. Проверь статус токена."
+фи
