@@ -1,0 +1,2 @@
+=== ZeroSeg XDR SECURITY AUDIT REPORT ===
+СИСТЕМА: Linux 6.18.9+kali-amd64 | IP: 127.0.1.1

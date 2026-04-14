@@ -1,0 +1,5 @@
+{
+    "compliance": "GOST-27001",
+    "os": "Linux",
+    "usb_run": false
+}
